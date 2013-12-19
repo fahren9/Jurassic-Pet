@@ -165,9 +165,11 @@ window.onload = function() {
     }
     else
     {
+      $('.bottom-section').fadeOut('fast');
       $('.dark-bg, .pet-clean').fadeIn('fast');
       setTimeout(function() {
         $('.dark-bg, .pet-clean').fadeOut('fast');
+        $('.bottom-section').fadeIn('fast');
         petID.showerLimit++;
         petID.fatigue = petID.fatigue + (50 / petID.lvl);
         petID.money -= 20;
@@ -190,10 +192,16 @@ window.onload = function() {
     }
     else    
     {
-      petID.gameLimit++;
-      petID.fatigue  = petID.fatigue - (20 / petID.lvl);
-      petID.faim     = petID.faim + (100 / petID.lvl);
-      petID.money += 60;
+      $('.bottom-section').fadeOut('fast');
+      $('.dark-bg, .canvas-game').fadeIn('fast');
+      setTimeout(function() {
+        $('.dark-bg, .canvas-game').fadeOut('fast');
+        $('.bottom-section').fadeIn('fast');
+        petID.gameLimit++;
+        petID.fatigue  = petID.fatigue - (20 / petID.lvl);
+        petID.faim     = petID.faim + (100 / petID.lvl);
+        petID.money += 60;
+      }, 10000);
     }
   }
 
@@ -206,10 +214,11 @@ window.onload = function() {
     } else {
       // si on a pas déjà cliqué
       $('.dark-bg, .pet-sleep').fadeIn('fast');
+      $('.bottom-section').fadeOut('fast');
       setTimeout(function() {
         $('.dark-bg, .pet-sleep').fadeOut('fast');
+        $('.bottom-section').fadeIn('fast');
         petID.sleepLimit++;
-        alert('Ton pet a finit de se reposer')
         //réactivation du bouton au bout de 4 secondes
         petID.sleepLimit  = 0;
         petID.gameLimit   = 0;

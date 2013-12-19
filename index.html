@@ -42,32 +42,36 @@
     </div>
 
     <header class="stats-bar">
-      <div class="level">Niveau <strong id="level-number">1</strong></div>
+      <div class="level">Niveau <strong id="level-number">1</strong>
+      <table class="all-stats">
+        <tr>
+          <td class="stats-name">Score :</td>
+          <td id="score"></td>
+        </tr>
+        <tr>
+          <td class="stats-name">Argent :</td>
+          <td id="money"></td>
+        </tr>
+        <tr>
+          <td class="stats-name">Jours écoulés :</td>
+          <td id="days"></td>
+        </tr>
+      </table></div>
     </header>
 
-<!-- 
-        <li class="action help"></li>
-        <li class="info days">Jours: </li>
-        <li class="info score">Score: </li>
-        <li class="info money">Argent: </li>
-        <li class="info">test</li>
-        <li class="action boutique"></li> -->
-
     <section class="head-section">
-
       <section class="universe-contain">
-
         <div class="dark-bg"></div>
         <!-- POPUP - popup du canvas -->
-        <!-- <section class="lil-popup canvas-game">
+        <section class="lil-popup canvas-game">
           <canvas id="game" width="759" height="600"></canvas>
           <p>Score: <span id="canvas-score">0</span></p>
-        </section> -->
+          <div id="timer"></div>
+        </section>
         <!-- POPUP - popup de la mort -->
         <section class="lil-popup pet-clean">
           <section id="clean-pics"></section>
         </section>
-
         <!-- POPUP - popup de dormir -->
         <section class="lil-popup pet-sleep">
           <section id="sleep-pics"></section>
@@ -104,9 +108,6 @@
           <li class="btn action"><div id="laver"></div></li>
           <li class="btn special"><div id="dormir"></div></li>
         </ul>
-        <div id="score"></div>
-        <div id="days"></div>
-        <div id="money"></div>
       </section>
     </aside>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

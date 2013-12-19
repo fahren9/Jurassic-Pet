@@ -41,9 +41,8 @@ a, a:hover, a:active, a:focus { text-decoration:none; }
 	.bigpop .pet-contain { background:url('images/baby-static.png') no-repeat top center; height:458px; margin:0px auto; position:relative; width:270px;  }
 	.bigpop .dead-pics { background:#224229 no-repeat top center; height:250px; margin:0px auto; position:relative; width:460px;  }
 	.bigpop .egg { background:url('images/egg.png') no-repeat 50% 50%; height:206px; margin:0px auto; position:relative; width:136px;  }
-	
 
-.dark-bg { background-color:rgba(0,0,0,0.85); display:none; height:100%; position:fixed; width:100%; z-index:99; }
+.dark-bg { background-color:rgba(0,0,0,0.85); display:none; height:600px; position:fixed; width:759px; z-index:99; }
 .lil-popup { display:none; width: 759px; height: 600px; margin: 0; position:relative; z-index:100; }
 	#game { width: 759px; height: 600px; margin: 0; background: #7cc65c; position:relative; }
 	#canvas-score {  }
@@ -65,7 +64,13 @@ a, a:hover, a:active, a:focus { text-decoration:none; }
 
 header.stats-bar { height:50px; margin-top:8px; position:absolute; width:100%; z-index:50; }
 	header.stats-bar .level { background-color:rgba(255,255,255,0.4); border-radius:6px; box-shadow:0 1px 1px rgba(0,0,0,0.1); color:rgba(0,0,0,0.6); font-size:16px; height:36px; line-height:36px; margin:auto; position:relative; text-align:center; width:100px; }
-	header.stats-bar .level .level-number {  }
+	header.stats-bar .level:hover { border-radius:6px 6px 0px 0px; background:white; }
+		header.stats-bar .level .level-number {  }
+	header.stats-bar table.all-stats { background:white; border-radius:6px; display:none; height:auto; margin:0px 0 0 -100px; left:50%; padding:8px 0; position:absolute; width:200px; }
+	header.stats-bar .level:hover table.all-stats { display:block; }
+		header.stats-bar table.all-stats tr {  }
+			header.stats-bar table.all-stats tr td { color:#4e4e4e; font-weight:bold; padding:0px; text-align:center; vertical-align:middle; width:80px; }
+			header.stats-bar table.all-stats tr .stats-name { font-weight:normal; padding:0px 0px 0px 12px; text-align:left; width:120px; }
 .head-section { background-color:#c0f4ff; height:600px; margin:auto; position:relative; width:auto; z-index:10; }
 	.head-section .universe-contain { background:#c0f4ff url('images/sun.png') no-repeat 50px top; height:600px; margin:auto; overflow:hidden; position:relative; width:759px; z-index:9; }
 		.head-section .grass-front { background:url('images/grass-front.png') no-repeat top center; height:104px; margin:448px 0 0 310px; position:absolute; width:279px; z-index:12;  }
