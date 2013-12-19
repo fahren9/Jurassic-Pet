@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jurassic Pet</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <div class="white-bg"></div>
+    <!-- POPUP - Sélection du pet -->
+    <section class="bigpop select-pet">
+      <h2>Sélection du Pet</h2>
+      <section id="pet-existing">
+        PET DEJA EXISTANT
+      </section>
+      <p>ou</p>
+      <a href="" class="btn-blue" id="new-pet">Créer un Pet</a>
+    </section>
+    <!-- POPUP - Création du pet -->
+    <section class="bigpop create-pet">
+      <h2>Création du Pet</h2>
+      <figure id="egg"></figure>
+      <form id="name-form" action="#">
+          <input id="name-input" type="text">
+          <input type="submit" value="Commencer">
+      </form>
+    </section>
+    <!-- POPUP - Mort du pet -->
+    <section class="bigpop dead-pet">
+      <h2>Votre Pet est mort!</h2>
+      <figure class="dead-pics"></figure>
+      <a href="../" class="left btn-grey">Quitter</a>
+      <a href="" class="right btn-blue">Recommencer</a>
+    </section>
+    
+    <!-- POPUP - passage au niveau suivant -->
+    <div class="popup-lvl">
+      Niveau <span id="level-number-big">1</span>
+    </div>
+
+    <header class="stats-bar">
+      <div class="level">Niveau <strong id="level-number">1</strong></div>
+    </header>
+
+<!-- 
+        <li class="action help"></li>
+        <li class="info days">Jours: </li>
+        <li class="info score">Score: </li>
+        <li class="info money">Argent: </li>
+        <li class="info">test</li>
+        <li class="action boutique"></li> -->
+
+    <section class="head-section">
+
+      <section class="universe-contain">
+
+        <div class="dark-bg"></div>
+        <!-- POPUP - popup du canvas -->
+        <!-- <section class="lil-popup canvas-game">
+          <canvas id="game" width="759" height="600"></canvas>
+          <p>Score: <span id="canvas-score">0</span></p>
+        </section> -->
+        <!-- POPUP - popup de la mort -->
+        <section class="lil-popup pet-clean">
+          <section id="clean-pics"></section>
+        </section>
+
+        <!-- POPUP - popup de dormir -->
+        <section class="lil-popup pet-sleep">
+          <section id="sleep-pics"></section>
+        </section>
+
+        <section class="cloud one"></section>
+        <section class="cloud two"></section>
+        <section class="cloud three"></section>
+        <section class="cloud four"></section>
+        <section class="cloud five"></section>
+        <section class="cloud six"></section>
+        <section class="grass-front"></section>
+        <section class="pet-contain">
+
+        </section>
+        <section class="landscape-contain">
+            
+        </section>
+      </section>
+      <section class="grass-behind"></section>
+    </section>
+    <section class="bottom-section"> 
+      <section class="pet-info">
+        <h2 id="pet-name"></h2>
+        <h4 id="wellfare"></h4>
+        <div class="arrow"></div>
+        <section class="contain-bar">
+          <progress id="BarHungry" value="100" max="100"></progress>
+          <progress id="BarTired" value="100" max="100"></progress>
+        </section>
+        <ul class="pet-action">
+          <li class="btn action"><div id="nourriture"></div></li>
+          <li class="btn action"><div id="jouer"></div></li>
+          <li class="btn action"><div id="laver"></div></li>
+          <li class="btn special"><div id="dormir"></div></li>
+        </ul>
+        <div id="score"></div>
+        <div id="days"></div>
+        <div id="money"></div>
+      </section>
+    </aside>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/script.js"></script>
+  </body>
+</html>
