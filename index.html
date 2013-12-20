@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Jurassic Pet</title>
     <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.powertip.min.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
@@ -12,26 +13,31 @@
     <div class="white-bg"></div>
     <!-- POPUP - Sélection du pet -->
     <section class="bigpop select-pet">
-      <h2>Sélection du Pet</h2>
-      <section id="pet-existing">
-        PET DEJA EXISTANT
-      </section>
+      <h1>Sélection du Pet</h1>
+      <a id="pet-existing" title="Score: 0, Argent: 0">
+        <figure class="pet-contain"></figure>
+        <h3 id="exist-name">N/C</h3>
+        <h4 id="exist-lvl">N/C</h4>
+      </a>
       <p>ou</p>
-      <a href="" class="btn-blue" id="new-pet">Créer un Pet</a>
+      <a href="" class="btn-blue" id="new-pet">Créer un nouveau Pet</a>
     </section>
     <!-- POPUP - Création du pet -->
     <section class="bigpop create-pet">
-      <h2>Création du Pet</h2>
+      <h1>Création du Pet</h1>
       <figure id="egg"></figure>
       <form id="name-form" action="#">
-          <input id="name-input" type="text">
+          <input id="name-input" type="text" placeholder="Pseudonyme">
           <input type="submit" value="Commencer">
       </form>
     </section>
     <!-- POPUP - Mort du pet -->
     <section class="bigpop dead-pet">
-      <h2>Votre Pet est mort!</h2>
-      <figure class="dead-pics"></figure>
+      <h1>Votre Pet est mort de <span id="death-cause"></span>!</h1>
+      <figure class="dead-pics">
+        <div class="phantom-baby"></div>
+        <div class="dead-baby"></div>
+      </figure>
       <a href="../" class="left btn-grey">Quitter</a>
       <a href="" class="right btn-blue">Recommencer</a>
     </section>
@@ -64,13 +70,15 @@
         <div class="dark-bg"></div>
         <!-- POPUP - popup du canvas -->
         <section class="lil-popup canvas-game">
-          <canvas id="game" width="759" height="600"></canvas>
-          <p>Score: <span id="canvas-score">0</span></p>
-          <div id="timer"></div>
+         <iframe src="minijeufinal/myFrame.html" name="myFrame" id="myFrame" sandbox="allow-same-origin allow-scripts" width="759" height="600"></iframe>
         </section>
         <!-- POPUP - popup de la mort -->
         <section class="lil-popup pet-clean">
-          <section id="clean-pics"></section>
+          <div id="pet-clean">
+            <div class="ocean"></div>
+            <div class="dino"></div>
+            <div class="mer"></div>
+          </div>
         </section>
         <!-- POPUP - popup de dormir -->
         <section class="lil-popup pet-sleep">
@@ -91,7 +99,6 @@
             
         </section>
       </section>
-      <section class="grass-behind"></section>
     </section>
     <section class="bottom-section"> 
       <section class="pet-info">
@@ -103,14 +110,15 @@
           <progress id="BarTired" value="100" max="100"></progress>
         </section>
         <ul class="pet-action">
-          <li class="btn action"><div id="nourriture"></div></li>
-          <li class="btn action"><div id="jouer"></div></li>
-          <li class="btn action"><div id="laver"></div></li>
-          <li class="btn special"><div id="dormir"></div></li>
+          <li class="btn action"><a id="nourriture" title="Nourrir"></a></li>
+          <li class="btn action"><a id="jouer" title="Jouer"></a></li>
+          <li class="btn action"><a id="laver" title="Laver"></a></li>
+          <li class="btn special"><a id="dormir" title="Dormir"></a></li>
         </ul>
       </section>
     </aside>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/jquery.powertip.min.js"></script>
     <script type="text/javascript" language="javascript" src="js/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,18 @@
+* { margin: 0; }
+
+.background
+{
+	width: 		759px;
+	height: 	600px;
+	margin: 	0;
+	background: #7cc65c;
+}
+
+p
+{
+	position:absolute;
+	color:white;
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	margin:-590px 0 0 16px;
+}

@@ -11,6 +11,9 @@ window.onload = function() {
 
 
   if(petID.petName != '') {
+    document.getElementById('exist-name').innerHTML = petID.petName;
+    document.getElementById('exist-lvl').innerHTML = "Niveau " + petID.lvl;
+    $('#pet-existing').attr('title', 'Score: ' + petID.score + ', Argent: ' + petID.money);
     $('.white-bg, .select-pet').fadeIn('fast');
 
     $('#pet-existing').click(function() {
@@ -25,6 +28,14 @@ window.onload = function() {
   } else {
     $('.white-bg, .create-pet').fadeIn('fast');
   }
+
+  // PowerTip
+
+  $('#nourriture, #jouer, #laver, #dormir').powerTip({
+    placement: 'n'
+  });
+
+  $('#pet-existing').powerTip({ followMouse: true });
 
   function retrieve_from_localStorage() {
     if(localStorage.save)
@@ -53,7 +64,7 @@ window.onload = function() {
   function wildlife() {
       // Energy
       barFatigue.value = petID.fatigue;
-      petID.fatigue-=0;
+      petID.fatigue-=0.1;
       if(petID.fatigue <= 0) petID.fatigue = 0;
 
       // Score
@@ -62,7 +73,7 @@ window.onload = function() {
 
       // Food
       barHungry.value = petID.faim;
-      petID.faim-=0;
+      petID.faim-=0.1;
       if(petID.faim <= 0) petID.faim = 0;
 
       // Bien être
@@ -95,18 +106,21 @@ window.onload = function() {
       if (petID.fatigue <= 0 && petID.faim <= 0) {
         clearInterval(interval_id);
         localStorage.clear();
+        document.getElementById('death-cause').innerHTML = "faim et de fatigue";
         $('.white-bg, .dead-pet').fadeIn('fast');
       };
       //faire mourir de fatigue
       if (petID.fatigue <= 0 && petID.faim >= 1) {
         clearInterval(interval_id);
         localStorage.clear();
+        document.getElementById('death-cause').innerHTML = "fatigue";
         $('.white-bg, .dead-pet').fadeIn('fast');
       };
       //faire mourir de faim
       if (petID.faim <= 0 && petID.fatigue >= 1) {
         clearInterval(interval_id);
         localStorage.clear();
+        document.getElementById('death-cause').innerHTML = "faim";
         $('.white-bg, .dead-pet').fadeIn('fast');
       };
   }
@@ -233,7 +247,3 @@ window.onload = function() {
     }
   };
 };
-
-
-
-
