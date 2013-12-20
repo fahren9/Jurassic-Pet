@@ -1,4 +1,13 @@
-window.onload = function() {
+$(document).ready(function () {
+
+  $("body").queryLoader2({
+      barColor:           "#ffffff",
+      backgroundColor:    "#554e43",
+      percentage:         true,
+      barHeight:          2,
+      completeAnimation:  "grow",
+      minimumTime:        400
+  });
 
   var barFatigue  = document.getElementById('BarTired'),
       barHungry   = document.getElementById('BarHungry'),
@@ -8,9 +17,12 @@ window.onload = function() {
 
   document.getElementById('pet-name').innerHTML = petID.petName;
   document.getElementById('level-number').innerHTML = petID.lvl;
+  document.getElementById('days').innerHTML = petID.days;
+  document.getElementById('money').innerHTML = petID.money;
 
 
   if(petID.petName != '') {
+
     document.getElementById('exist-name').innerHTML = petID.petName;
     document.getElementById('exist-lvl').innerHTML = "Niveau " + petID.lvl;
     $('#pet-existing').attr('title', 'Score: ' + petID.score + ', Argent: ' + petID.money);
@@ -20,13 +32,17 @@ window.onload = function() {
       $('.white-bg, .select-pet').fadeOut('fast');
       interval_id = window.setInterval(function() {wildlife()}, 300);
     });
+
     $('#new-pet').click(function() {
       localStorage.clear();
       $('.select-pet').fadeOut('fast');
       $('.white-bg, .create-pet').fadeIn('fast');
     });
+
   } else {
+
     $('.white-bg, .create-pet').fadeIn('fast');
+
   }
 
   // PowerTip
@@ -36,6 +52,8 @@ window.onload = function() {
   });
 
   $('#pet-existing').powerTip({ followMouse: true });
+
+  // Test des données du localStorage
 
   function retrieve_from_localStorage() {
     if(localStorage.save)
@@ -57,9 +75,13 @@ window.onload = function() {
              };
   }
 
+  // Sauvegarde des données du localStorage
+
   function save_localStorage() {
     localStorage.save = JSON.stringify(petID);
   }
+
+  // fonction répété décrémentant les progress bars
 
   function wildlife() {
       // Energy
@@ -246,4 +268,4 @@ window.onload = function() {
       }, 4000);
     }
   };
-};
+});
